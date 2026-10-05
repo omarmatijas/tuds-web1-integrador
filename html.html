@@ -1,68 +1,84 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HAUSBIER - Cerveza artesanales</title>
   <link rel="stylesheet" href="assets/styles.css">
 </head>
+
 <body>
   <!-- Página principal. Deberá incluir: información general y una presentación clara del sitio; un menú de navegación; un carrusel de imágenes desarrollado con JavaScript. -->
-      <h1>HAUSBIER</h1>
-  <br>
-  <header class="header">
-    <nav class="nav">
-      <a href="html.html">Inicio</a>
-      <a href="product.html">Productos</a>
-      <a href="content.html">Contacto</a>
+  <header>
+    <h1>
+      <img src="./assets/img/hausbier_logo_transparent.png" alt="Logo de HAUSBIER" title="Logo de HAUSBIER">
+    </h1>
+    <nav>
+      <ul>
+        <li>
+          <a href="html.html" class="active">Inicio</a>
+        </li>
+        <li>
+          <a href="product.html">Productos</a>
+        </li>
+        <li>
+          <a href="contact.html">Contacto</a>
+        </li>
+      </ul>
     </nav>
 
-    <section >
-<br>
-<!--De aca quedaria bueno si lo ponemos dentro de la imagen en un costado-->
+    <section>
+      <div>
         <h2>Bienvenidos a HAUSBIER</h2>
-<br>
-        <p>Cerveza artesanales con caracter, <br>hecha spara quienes disfrutan de <br> los buenos momentos</p>
+        <p>Cerveza artesanal con carácter, <br>hecha para quienes disfrutan<br> de los buenos momentos</p>
+      </div>
 
-        <!--La imagen se pueden cambiar-->
-          <img src="./Imagenes/Img_Portada.jpg" alt="Portada" width="500" height="300">
-
+      <!--La imagen se pueden cambiar-->
+      <img src="./assets/img/img_portada.jpg" alt="Tabla de cervezas artesanales con lúpulo y malta"
+        title="Cervezas artesanales HAUSBIER">
     </section>
-    
-    <h3>Nuestros Productos</h3>
-<!--Aca pondria los productos (Rubi, Ipa, Roja, Negra, etc)-->
 
+    <h2>La magia de nuestro proceso</h2>
+    <!-- Acá podemos chamuyar acerca del proceso de fabricación; los productos van en la otra página
+      En el proceso, incluir el carrusel de imágenes que se pide en la consigna-->
 
   </header>
-<br>
 
-  <footer class="footer">
-    <h3>HAUSBIER</h3>
-    <p>Cerveza Artesanales</p>
-    <p>Villa Mercedes - San Luis</p>
+  <footer>
+    <div>
+      <img class="logo-footer" src="./assets/img/hausbier_logo_transparent.png" alt="Logo de HAUSBIER"
+        title="Logo de HAUSBIER">
+      <p>Cerveza Artesanal</p>
+      <a href="https://maps.app.goo.gl/q54BDB2Nd2fDTpQN8" target="_blank" class="location">
+        <img src="./assets/icons/location.svg" alt="Ubicación" title="Ubicación">
+        San Juan 137 - Villa Mercedes - San Luis
+      </a>
+    </div>
 
-    <br>
-    <h4>Seguinos en nuestras rede</h4>
-    <nav>
-      <!--Instagram-->
-      <a href=""></a>
+    <div>
+      <p>Seguinos en nuestras redes</p>
+      <nav>
+        <ul>
+          <li>
+            <a href="https://www.instagram.com/hausbier.vm/" target="_blank" class="instagram">
+              <img src="./assets/icons/instagram.svg" alt="Instagram" title="Instagram">
+              Instagram
+            </a>
+          </li>
 
-      <br>
-
-      <!--Faceboock-->
-      <a href=""></a>
-
-      <br>
-
-      <!--Wassap-->
-      <a href=""></a>
-
-
-    </nav>
-
-
+          <li>
+            <a href="https://wa.me/5492664309170" target="_blank" class="whatsapp">
+              <img src="./assets/icons/whatsapp.svg" alt="WhatsApp" title="WhatsApp">
+              WhatsApp
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </footer>
-  
+
   <script src="assets/scripts.js"></script>
 </body>
+
 </html>

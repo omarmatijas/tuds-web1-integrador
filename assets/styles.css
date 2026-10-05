@@ -12,6 +12,8 @@ html {
 
 body {
   min-height: 100%;
+  background-color: #FBF5E9;
+  color: #053D30;
 }
 
 img {
@@ -31,11 +33,91 @@ select {
   font: inherit;
 }
 
-.header {
+header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
 }
 
-.nav {
+header > section,
+header > h2 {
+  flex-basis: 100%;
 }
 
-.footer {
+header > section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+header > section > div {
+  flex: 1;
+}
+
+header > section img {
+  flex: 1;
+  width: 50%;
+  height: auto;
+}
+
+header h1 img {
+  width: 7rem;
+  height: auto;
+}
+
+header nav,
+header nav ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+footer > div {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+footer > div:last-child {
+  align-items: center;
+  text-align: center;
+}
+
+footer .logo-footer {
+  width: 3.5rem;
+  height: auto;
+}
+
+footer a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+footer a img {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+footer nav ul {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  list-style: none;
 }

@@ -8,17 +8,82 @@
 </head>
 <body>
   <!-- Página de contacto. Deberá incluir un formulario con, al menos, tres campos. Entre ellos deberán encontrarse obligatoriamente: correo electrónico, teléfono y al menos un campo adicional, como nombre, asunto o mensaje. -->
+
   <header class="header">
+    <h1>
+      <img src="./assets/img/hausbier_logo_transparent.png" alt="Logo de HAUSBIER" title="Logo de HAUSBIER">
+    </h1>
+    <section>
+    <h2>Contactate con HAUSBIER</h2>
+    <P>¿Queres conocer mas sobre nuestras cervezas artesanales?<br> ¿Tenes algua consulta o queres realizar un pedido?</P>
+    </section>
+    
     <nav class="nav">
       <a href="index.html">Inicio</a>
       <a href="product.html">Productos</a>
       <a href="contact.html" class="active">Contacto</a>
     </nav>
   </header>
+
+  <section>
+
   <form action="#" method="post">
+
+    <h2>Formulario de contacto</h2>
+    <p>Completa el formulario y te responderemos a la brevedad</p>
+<!-- Nombre y Apellido -->
+    <label for="nombre">Nombre y Apellido:</label><br>
+    <input type="text" id="nombre" name="nombre" placeholder="Ingrese Nombre y Apellido" required><br><br>
+<!-- Correo Electronico -->
+    <label for="email">Correo Electronico:</label><br>
+    <input type="text" id="email" name="email" placeholder="ejemplo@correo.com" required><br><br>
+<!-- Telefono -->
+    <label for="telefono">Telefono:</label><br>
+    <input type="tel" id="telefono" name="telefono" placeholder="Ingresa tu telefono" required><br><br>
+<!-- Asunto -->
+    <label for="mensaje">Tu mensaje:</label><br>
+    <textarea name="mensaje" id="mensaje" rows="6" cols="50" placeholder="Escribe tu consulta" required minlength="10" maxlength="500"></textarea><br><br>
+<!-- Botones -->
     <button type="submit">Enviar</button>
-  </form>
-  <footer class="footer"></footer>
+    <button type="reset">Limpiar formulario</button>
+    </select>
+</form>
+  </section>
+
+  <footer class="footer">
+  <div>
+      <img class="logo-footer" src="./assets/img/hausbier_logo_transparent.png" alt="Logo de HAUSBIER"
+        title="Logo de HAUSBIER">
+      <p>Cerveza Artesanal</p>
+      <a href="https://maps.app.goo.gl/q54BDB2Nd2fDTpQN8" target="_blank" class="location">
+        <img src="./assets/icons/location.svg" alt="Ubicación" title="Ubicación">
+        San Juan 137 - Villa Mercedes - San Luis
+      </a>
+    </div>
+
+    <div>
+      <p>Seguinos en nuestras redes</p>
+      <nav>
+        <ul>
+          <li>
+            <a href="https://www.instagram.com/hausbier.vm/" target="_blank" class="instagram">
+              <img src="./assets/icons/instagram.svg" alt="Instagram" title="Instagram">
+              Instagram
+            </a>
+          </li>
+
+          <li>
+            <a href="https://wa.me/5492664309170" target="_blank" class="whatsapp">
+              <img src="./assets/icons/whatsapp.svg" alt="WhatsApp" title="WhatsApp">
+              WhatsApp
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+  </footer>
+
   <script src="assets/scripts.js"></script>
 </body>
 </html>

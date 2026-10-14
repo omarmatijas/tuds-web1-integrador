@@ -1,57 +1,77 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contacto</title>
+  <title>HAUSBIER - Contacto</title>
   <link rel="stylesheet" href="assets/styles.css">
 </head>
+
 <body>
   <!-- Página de contacto. Deberá incluir un formulario con, al menos, tres campos. Entre ellos deberán encontrarse obligatoriamente: correo electrónico, teléfono y al menos un campo adicional, como nombre, asunto o mensaje. -->
-
-  <header class="header">
+  <header>
     <h1>
       <img src="./assets/img/hausbier_logo_transparent.png" alt="Logo de HAUSBIER" title="Logo de HAUSBIER">
     </h1>
-    <section>
-    <h2>Contactate con HAUSBIER</h2>
-    <P>¿Queres conocer mas sobre nuestras cervezas artesanales?<br> ¿Tenes algua consulta o queres realizar un pedido?</P>
-    </section>
-    
-    <nav class="nav">
-      <a href="index.html">Inicio</a>
-      <a href="product.html">Productos</a>
-      <a href="contact.html" class="active">Contacto</a>
+    <nav>
+      <ul>
+        <li>
+          <a href="index.html">Inicio</a>
+        </li>
+        <li>
+          <a href="product.html">Productos</a>
+        </li>
+        <li>
+          <a href="contact.html" class="active">Contacto</a>
+        </li>
+      </ul>
     </nav>
   </header>
 
-  <section>
+  <main>
+    <section>
+      <h2>Contactate con HAUSBIER</h2>
+      <P>¿Queres conocer mas sobre nuestras cervezas artesanales?<br> ¿Tenes algua consulta o queres realizar un pedido?
+      </P>
+    </section>
 
-  <form action="#" method="post">
+    <section>
 
-    <h2>Formulario de contacto</h2>
-    <p>Completa el formulario y te responderemos a la brevedad</p>
-<!-- Nombre y Apellido -->
-    <label for="nombre">Nombre y Apellido:</label><br>
-    <input type="text" id="nombre" name="nombre" placeholder="Ingrese Nombre y Apellido" required><br><br>
-<!-- Correo Electronico -->
-    <label for="email">Correo Electronico:</label><br>
-    <input type="text" id="email" name="email" placeholder="ejemplo@correo.com" required><br><br>
-<!-- Telefono -->
-    <label for="telefono">Telefono:</label><br>
-    <input type="tel" id="telefono" name="telefono" placeholder="Ingresa tu telefono" required><br><br>
-<!-- Asunto -->
-    <label for="mensaje">Tu mensaje:</label><br>
-    <textarea name="mensaje" id="mensaje" rows="6" cols="50" placeholder="Escribe tu consulta" required minlength="10" maxlength="500"></textarea><br><br>
-<!-- Botones -->
-    <button type="submit">Enviar</button>
-    <button type="reset">Limpiar formulario</button>
-    </select>
-</form>
-  </section>
+      <form action="#" method="post">
+        <p>Completa el formulario y te responderemos a la brevedad</p>
+        <!-- Nombre y Apellido -->
+        <div class="campo">
+          <label for="nombre">Nombre y Apellido:</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Ingrese Nombre y Apellido" required>
+        </div>
+        <!-- Correo Electronico -->
+        <div class="campo">
+          <label for="email">Correo Electronico:</label>
+          <input type="text" id="email" name="email" placeholder="ejemplo@correo.com" required>
+        </div>
+        <!-- Telefono -->
+        <div class="campo">
+          <label for="telefono">Telefono:</label>
+          <input type="tel" id="telefono" name="telefono" placeholder="Ingresa tu telefono" required>
+        </div>
+        <!-- Mensaje -->
+        <div class="campo">
+          <label for="mensaje">Tu mensaje:</label>
+          <textarea name="mensaje" id="mensaje" rows="6" placeholder="Escribe tu consulta" required minlength="10"
+            maxlength="500"></textarea>
+        </div>
+        <!-- Botones -->
+        <div class="acciones">
+          <button type="submit">Enviar</button>
+          <button type="reset">Limpiar formulario</button>
+        </div>
+      </form>
+    </section>
+  </main>
 
-  <footer class="footer">
-  <div>
+  <footer>
+    <div>
       <img class="logo-footer" src="./assets/img/hausbier_logo_transparent.png" alt="Logo de HAUSBIER"
         title="Logo de HAUSBIER">
       <p>Cerveza Artesanal</p>
@@ -81,9 +101,9 @@
         </ul>
       </nav>
     </div>
-
   </footer>
 
   <script src="assets/scripts.js"></script>
 </body>
+
 </html>

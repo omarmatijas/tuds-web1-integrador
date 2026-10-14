@@ -1,21 +1,96 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Productos</title>
+  <title>HAUSBIER - Productos</title>
   <link rel="stylesheet" href="assets/styles.css">
 </head>
+
 <body>
-  <!-- Página de artículo, productos o servicios. El contenido deberá presentar información relevante, estar organizado en dos o tres columnas mediante Flexbox, mantener una estructura clara y legible, y adaptarse de manera razonable a diferentes tamaños de pantalla. -->
-  <header class="header">
-    <nav class="nav">
-      <a href="index.html">Inicio</a>
-      <a href="product.html" class="active">Productos</a>
-      <a href="contact.html">Contacto</a>
+  <header>
+    <h1>
+      <img src="./assets/img/hausbier_logo_transparent.png" alt="Logo de HAUSBIER" title="Logo de HAUSBIER">
+    </h1>
+    <nav>
+      <ul>
+        <li>
+          <a href="index.html">Inicio</a>
+        </li>
+        <li>
+          <a href="product.html" class="active">Productos</a>
+        </li>
+        <li>
+          <a href="contact.html">Contacto</a>
+        </li>
+      </ul>
     </nav>
   </header>
-  <footer class="footer"></footer>
+
+  <main>
+    <h2>Nuestras cervezas</h2>
+    <p class="productos-intro">Tres estilos elaborados en Villa Mercedes. Cada uno busca un momento distinto: la rubia
+      para refrescar, la ámbar para acompañar la mesa y la negra para cerrar la noche.</p>
+
+    <section class="productos">
+      <article>
+        <h3>Haus Rubia</h3>
+        <p class="estilo">Golden Ale</p>
+        <p>Dorada y ligera, con aroma a cereal y un final limpio. Es la cerveza de todos los días, fácil de tomar y
+          pensada para el calor de San Luis.</p>
+      </article>
+
+      <article>
+        <h3>Haus Ámbar</h3>
+        <p class="estilo">Amber Ale</p>
+        <p>Color cobrizo y cuerpo medio. La malta aporta caramelo y pan tostado, y el lúpulo deja un amargor suave que
+          no tapa el sabor.</p>
+      </article>
+
+      <article>
+        <h3>Haus Negra</h3>
+        <p class="estilo">Stout</p>
+        <p>Oscura y cremosa, con notas de café y cacao. Tiene más cuerpo que las otras dos y se disfruta de a poco,
+          cuando la comida ya está en la mesa.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <img class="logo-footer" src="./assets/img/hausbier_logo_transparent.png" alt="Logo de HAUSBIER"
+        title="Logo de HAUSBIER">
+      <p>Cerveza Artesanal</p>
+      <a href="https://maps.app.goo.gl/q54BDB2Nd2fDTpQN8" target="_blank" class="location">
+        <img src="./assets/icons/location.svg" alt="Ubicación" title="Ubicación">
+        San Juan 137 - Villa Mercedes - San Luis
+      </a>
+    </div>
+
+    <div>
+      <p>Seguinos en nuestras redes</p>
+      <nav>
+        <ul>
+          <li>
+            <a href="https://www.instagram.com/hausbier.vm/" target="_blank" class="instagram">
+              <img src="./assets/icons/instagram.svg" alt="Instagram" title="Instagram">
+              Instagram
+            </a>
+          </li>
+
+          <li>
+            <a href="https://wa.me/5492664309170" target="_blank" class="whatsapp">
+              <img src="./assets/icons/whatsapp.svg" alt="WhatsApp" title="WhatsApp">
+              WhatsApp
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
   <script src="assets/scripts.js"></script>
 </body>
+
 </html>

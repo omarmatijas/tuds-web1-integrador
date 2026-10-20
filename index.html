@@ -38,7 +38,7 @@
       </div>
 
       <!--La imagen se pueden cambiar-->
-      <img src="assets/img/imagen portada.jpg" alt="Tabla de cervezas artesanales con lúpulo y malta"
+      <img src="./assets/img/img_portada.jpg" alt="Tabla de cervezas artesanales con lúpulo y malta"
         title="Cervezas artesanales HAUSBIER">
     </section>
 
@@ -48,39 +48,50 @@
     <div>
       <p>La elaboración de cerveza artesanal comienza con la selección de los ingredientes principales: agua, malta de
         cebada, lúpulo y levadura.</p><br>
-      <!--Lista ordenada del proceso de elaboracion-->
-      <ol class="proceso">
-        <li>
-          <img src="./assets/img/01_maceracion.jpg" alt="Maceración de la malta en una olla de acero"
-            title="Maceración">
-          <p>Maceracion: se mezcla la malta con agua caliente para extraer los azucares necesarios.</p>
-        </li>
+      <div class="carrusel" id="carrusel-proceso">
+        <ol class="proceso">
+          <li>
+            <span class="paso-numero">1</span>
+            <img src="./assets/img/01_maceracion.jpg" alt="Maceración de la malta en una olla de acero"
+              title="Maceración">
+            <p>Maceracion: se mezcla la malta con agua caliente para extraer los azucares necesarios.</p>
+          </li>
 
-        <li>
-          <img src="./assets/img/02_coccion.png" alt="Cocción del mosto hirviendo en una olla" title="Cocción">
-          <p>Cocción: el líquido obtenido, llamado mosto, se hierve y se agrega el lúpulo, que aporta sabor, aroma y
-            amargor.</p>
-        </li>
+          <li>
+            <span class="paso-numero">2</span>
+            <img src="./assets/img/02_coccion.png" alt="Cocción del mosto hirviendo en una olla" title="Cocción">
+            <p>Cocción: el líquido obtenido, llamado mosto, se hierve y se agrega el lúpulo, que aporta sabor, aroma y
+              amargor.</p>
+          </li>
 
-        <li>
-          <img src="./assets/img/03_fermentacion.jpg" alt="Tanques de fermentación de acero inoxidable"
-            title="Fermentación">
-          <p>Fermentación: se enfría el mosto y se incorpora la levadura, que transforma los azúcares en alcohol y
-            dióxido de carbono.</p>
-        </li>
+          <li>
+            <span class="paso-numero">3</span>
+            <img src="./assets/img/03_fermentacion.jpg" alt="Tanques de fermentación de acero inoxidable"
+              title="Fermentación">
+            <p>Fermentación: se enfría el mosto y se incorpora la levadura, que transforma los azúcares en alcohol y
+              dióxido de carbono.</p>
+          </li>
 
-        <li>
-          <img src="./assets/img/04_marudacion.jpg" alt="Tanques de maduración en la planta de elaboración"
-            title="Maduración">
-          <p>Maduración: la cerveza permanece un tiempo en reposo para desarrollar mejor sus sabores y aromas.</p>
-        </li>
+          <li>
+            <span class="paso-numero">4</span>
+            <img src="./assets/img/04_marudacion.jpg" alt="Tanques de maduración en la planta de elaboración"
+              title="Maduración">
+            <p>Maduración: la cerveza permanece un tiempo en reposo para desarrollar mejor sus sabores y aromas.</p>
+          </li>
 
-        <li>
-          <img src="./assets/img/05_envasado.jpg" alt="Envasado de cerveza en una botella de vidrio" title="Envasado">
-          <p>Envasado: finalmente, la cerveza se filtra o acondiciona según el estilo y se coloca en botellas, latas o
-            barriles.</p>
-        </li>
-      </ol>
+          <li>
+            <span class="paso-numero">5</span>
+            <img src="./assets/img/05_envasado.jpg" alt="Envasado de cerveza en una botella de vidrio" title="Envasado">
+            <p>Envasado: finalmente, la cerveza se filtra o acondiciona según el estilo y se coloca en botellas, latas o
+              barriles.</p>
+          </li>
+        </ol>
+        <div class="carrusel-controles">
+          <button type="button" id="carrusel-anterior">Anterior</button>
+          <p id="carrusel-indicador"></p>
+          <button type="button" id="carrusel-siguiente">Siguiente</button>
+        </div>
+      </div>
 
     </div>
   </main>

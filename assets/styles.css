@@ -172,16 +172,20 @@ main > section.productos {
   line-height: 1.5;
 }
 
-.proceso {
-  list-style: none;
+.carrusel {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1rem;
   margin-top: 1.25rem;
-  counter-reset: paso;
+}
+
+.proceso {
+  list-style: none;
+  margin: 0;
 }
 
 .proceso li {
+  position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -189,7 +193,22 @@ main > section.productos {
   padding: 1rem;
   background-color: #fff;
   border-top: 4px solid var(--verde);
-  counter-increment: paso;
+}
+
+.paso-numero {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  min-width: 1.75rem;
+  padding: 0.2rem 0.45rem;
+  background-color: var(--verde);
+  color: var(--crema);
+  font-weight: 700;
+  text-align: center;
+}
+
+.proceso li[hidden] {
+  display: none;
 }
 
 .proceso li img {
@@ -203,8 +222,25 @@ main > section.productos {
   line-height: 1.5;
 }
 
-.proceso li p::before {
-  content: counter(paso) ". ";
+.carrusel-controles {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.carrusel-controles button {
+  padding: 0.6rem 1.25rem;
+  border: 1px solid var(--verde);
+  background-color: var(--verde);
+  color: var(--crema);
+  cursor: pointer;
+}
+
+.carrusel-controles p {
+  min-width: 3rem;
+  text-align: center;
   font-weight: 700;
 }
 

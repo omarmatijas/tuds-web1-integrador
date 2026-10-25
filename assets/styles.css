@@ -1,5 +1,6 @@
 :root {
   --verde: #053D30;
+  --verde-hover: #348774;
   --crema: #FBF5E9;
 }
 
@@ -9,6 +10,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: Arial, Helvetica, sans-serif, monospace;
 }
 
 html {
@@ -75,6 +77,7 @@ main > section img {
   flex: 1;
   width: 50%;
   height: auto;
+  border-radius: 0.5rem;
 }
 
 main > h2 {
@@ -99,6 +102,10 @@ header nav a.active {
   font-weight: 700;
   border-bottom: 2px solid var(--verde);
   padding-bottom: 0.15rem;
+}
+
+header nav a:hover {
+  color: var(--verde-hover);
 }
 
 footer {
@@ -133,6 +140,10 @@ footer a {
   gap: 0.4rem;
 }
 
+footer a:hover {
+  color: var(--verde-hover);
+}
+
 footer a img {
   width: 1.25rem;
   height: 1.25rem;
@@ -160,7 +171,7 @@ main > section.productos {
 }
 
 .productos article {
-  flex: 1 1 16rem;
+  flex: 1 1 11rem;
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
@@ -204,12 +215,16 @@ main > section.productos {
   position: absolute;
   top: 0.75rem;
   right: 0.75rem;
-  min-width: 1.75rem;
-  padding: 0.2rem 0.45rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
   background-color: var(--verde);
   color: var(--crema);
   font-weight: 700;
-  text-align: center;
+  line-height: 1;
 }
 
 .carrusel-vista img {
@@ -217,6 +232,7 @@ main > section.productos {
   height: 10rem;
   object-fit: cover;
   flex-shrink: 0;
+  border-radius: 0.5rem;
 }
 
 .carrusel-vista p {
@@ -234,9 +250,15 @@ main > section.productos {
 .carrusel-controles button {
   padding: 0.6rem 1.25rem;
   border: 1px solid var(--verde);
+  border-radius: 0.5rem;
   background-color: var(--verde);
   color: var(--crema);
   cursor: pointer;
+}
+
+.carrusel-controles button:hover {
+  background-color: var(--verde-hover);
+  border-color: var(--verde-hover);
 }
 
 .carrusel-controles p {
@@ -268,6 +290,7 @@ form {
   width: 100%;
   padding: 0.6rem 0.75rem;
   border: 1px solid var(--verde);
+  border-radius: 0.5rem;
   background-color: #fff;
   color: var(--verde);
 }
@@ -286,6 +309,7 @@ form {
 .acciones button {
   padding: 0.6rem 1.25rem;
   border: 1px solid var(--verde);
+  border-radius: 0.5rem;
   background-color: var(--verde);
   color: var(--crema);
   cursor: pointer;

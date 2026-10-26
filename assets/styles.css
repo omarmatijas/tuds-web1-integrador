@@ -171,6 +171,13 @@ main > section.productos {
   gap: 1.5rem;
 }
 
+main > section.productos img {
+  flex: none;
+  align-self: stretch;
+  width: 100%;
+  height: auto;
+}
+
 .productos article {
   flex: 1 1 11rem;
   display: flex;

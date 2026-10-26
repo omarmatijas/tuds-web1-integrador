@@ -219,6 +219,10 @@ main > section.productos img {
   border-top: 4px solid var(--verde);
 }
 
+.carrusel-vista[hidden] {
+  display: none;
+}
+
 .paso-numero {
   position: absolute;
   top: 0.75rem;

@@ -1,8 +1,6 @@
 let formulario;
 let carruselPortada;
-let imagenCarrusel;
-let textoCarrusel;
-let numeroCarrusel;
+let vistasCarrusel = [];
 let indicadorCarrusel;
 let indiceCarrusel = 0;
 
@@ -52,19 +50,11 @@ function inicializarCarruselPortada() {
         return;
     }
 
-    const vista = document.createElement("div");
-    vista.className = "carrusel-vista";
-
-    numeroCarrusel = document.createElement("span");
-    numeroCarrusel.className = "paso-numero";
-
-    imagenCarrusel = document.createElement("img");
-
-    textoCarrusel = document.createElement("p");
-
-    vista.appendChild(numeroCarrusel);
-    vista.appendChild(imagenCarrusel);
-    vista.appendChild(textoCarrusel);
+    for (let i = 0; i < pasosProceso.length; i++) {
+        const vista = crearVistaPaso(pasosProceso[i], i);
+        vistasCarrusel.push(vista);
+        carruselPortada.appendChild(vista);
+    }
 
     const controles = document.createElement("div");
     controles.className = "carrusel-controles";
@@ -85,19 +75,36 @@ function inicializarCarruselPortada() {
     controles.appendChild(indicadorCarrusel);
     controles.appendChild(botonSiguiente);
 
-    carruselPortada.appendChild(vista);
     carruselPortada.appendChild(controles);
     mostrarPaso(indiceCarrusel);
 }
 
-function mostrarPaso(indice) {
-    const paso = pasosProceso[indice];
+function crearVistaPaso(paso, indice) {
+    const vista = document.createElement("div");
+    vista.className = "carrusel-vista";
 
-    imagenCarrusel.src = paso.src;
-    imagenCarrusel.alt = paso.alt;
-    imagenCarrusel.title = paso.titulo;
-    textoCarrusel.textContent = paso.texto;
-    numeroCarrusel.textContent = indice + 1;
+    const numero = document.createElement("span");
+    numero.className = "paso-numero";
+    numero.textContent = indice + 1;
+
+    const imagen = document.createElement("img");
+    imagen.src = paso.src;
+    imagen.alt = paso.alt;
+    imagen.title = paso.titulo;
+
+    const texto = document.createElement("p");
+    texto.textContent = paso.texto;
+
+    vista.appendChild(numero);
+    vista.appendChild(imagen);
+    vista.appendChild(texto);
+    return vista;
+}
+
+function mostrarPaso(indice) {
+    for (let i = 0; i < vistasCarrusel.length; i++) {
+        vistasCarrusel[i].hidden = i !== indice;
+    }
     indicadorCarrusel.textContent = (indice + 1) + " / " + pasosProceso.length;
 }
 

@@ -2,6 +2,7 @@
   --verde: #053D30;
   --verde-hover: #348774;
   --crema: #FBF5E9;
+  --ancho-chico: 500px;
 }
 
 *,
@@ -329,5 +330,24 @@ form {
   .carrusel-vista img {
     width: 100%;
     height: 12rem;
+  }
+}
+
+@media (width <= 500px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  header nav,
+  header nav ul {
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  footer nav ul {
+    flex-direction: column;
+    align-items: center;
   }
 }

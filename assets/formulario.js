@@ -94,14 +94,14 @@ function validarFormularioContacto(evento) {
     const parrafoTelefono = document.createElement("p"); 
     parrafoTelefono.textContent = "Teléfono: " + telefono.value.trim();
 
-    const parrafoMensaje = document.createElement("p"); 
-    parrafoMensaje.textContent = "Mensaje: " + mensaje.value.trim();
+    const parrafoConfirmacion = document.createElement("p"); 
+    parrafoConfirmacion.textContent = "Tu consulta fue enviada correctamente. ¡¡¡Gracias por elegir HAUSBIER!!!";
 
     resumen.appendChild(titulo);
     resumen.appendChild(parrafoNombre);
     resumen.appendChild(parrafoEmail);
     resumen.appendChild(parrafoTelefono);
-    resumen.appendChild(parrafoMensaje);
+    resumen.appendChild(parrafoConfirmacion);
 
     contenedorResumen.appendChild(resumen);
     formulario.reset();

@@ -127,12 +127,12 @@ function mostrarPasoAnterior() {
 function inicializarValidacionFormContacto() {
     formulario = document.getElementById("formulario-contacto");
     if (formulario) {
-        formulario.addEventListener("submit", validarFormularioContacto);
+        formulario.addEventListener("submit", procesarFormularioContacto);
         formulario.addEventListener("reset", limpiarMensajesError);
     }
 }
 
-function validarFormularioContacto(evento) {
+function procesarFormularioContacto(evento) {
     evento.preventDefault();
     limpiarMensajesError();
 
@@ -140,65 +140,86 @@ function validarFormularioContacto(evento) {
     const email = document.getElementById("email");
     const telefono = document.getElementById("telefono");
     const mensaje = document.getElementById("mensaje");
-    const errores = [];
-
-    if (nombre.value.trim() === "") {
-        errores.push({
-            campo: nombre,
-            mensaje: "Por favor, completar el nombre y apellido."
-        });
-    }
-
-    const emailValor = email.value.trim();
-    const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    if (emailValor === "") {
-        errores.push({
-            campo: email,
-            mensaje: "Por favor, completar el correo electrónico."
-        });
-    } else if (!regexEmail.test(emailValor)) {
-        errores.push({
-            campo: email,
-            mensaje: "Por favor, ingresar un correo electrónico valido."
-        });
-    }
-
-    const telefonoValor = telefono.value.trim();
-    const regexTelefono = /^[0-9]{7,15}$/;
-    if (telefonoValor === "") {
-        errores.push({
-            campo: telefono,
-            mensaje: "Por favor, completar el teléfono."
-        });
-    } else if (!regexTelefono.test(telefonoValor)) {
-        errores.push({
-            campo: telefono,
-            mensaje: "Por favor, ingresar un número de telefono válido (solo números, mínimo 7 digitos)."
-        });
-    }
-
-    const mensajeValor = mensaje.value.trim();
-    if (mensajeValor === "") {
-        errores.push({
-            campo: mensaje,
-            mensaje: "Por favor, completar el mensaje."
-        });
-    } else if (mensajeValor.length < 10) {
-        errores.push({
-            campo: mensaje,
-            mensaje: "El mensaje debe contener al menos 10 caracteres."
-        });
-    }
+    const errores = validarCampos(nombre.value, email.value, telefono.value, mensaje.value);
 
     if (errores.length > 0) {
         for (let i = 0; i < errores.length; i++) {
-            mostrarMensajeError(errores[i].campo, errores[i].mensaje);
+            const campo = document.getElementById(errores[i].campo);
+            mostrarMensajeError(campo, errores[i].mensaje);
         }
         return false;
     }
 
-    const contenedorResumen = document.getElementById("contenedor-resumenFormulario");
-    contenedorResumen.innerHTML = "";
+    mostrarMensajeExito();
+    formulario.reset();
+
+    return true;
+
+}
+
+function validarCampos(nombre, email, telefono, mensaje) {
+    const errores = [];
+    const nombreValor = nombre.trim();
+    const emailValor = email.trim();
+    const telefonoValor = telefono.trim();
+    const mensajeValor = mensaje.trim();
+
+    if (nombreValor === "") {
+        errores.push({
+            campo: "nombre",
+            mensaje: "Por favor, completar el nombre y apellido."
+        });
+    }
+
+    const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (emailValor === "") {
+        errores.push({
+            campo: "email",
+            mensaje: "Por favor, completar el correo electrónico."
+        });
+    } else if (!regexEmail.test(emailValor)) {
+        errores.push({
+            campo: "email",
+            mensaje: "Por favor, ingresar un correo electrónico valido."
+        });
+    }
+
+    const regexTelefono = /^[0-9]{7,15}$/;
+    if (telefonoValor === "") {
+        errores.push({
+            campo: "telefono",
+            mensaje: "Por favor, completar el teléfono."
+        });
+    } else if (!regexTelefono.test(telefonoValor)) {
+        errores.push({
+            campo: "telefono",
+            mensaje: "Por favor, ingresar un número de telefono válido (solo números, mínimo 7 digitos)."
+        });
+    }
+
+    if (mensajeValor === "") {
+        errores.push({
+            campo: "mensaje",
+            mensaje: "Por favor, completar el mensaje."
+        });
+    } else if (mensajeValor.length < 10) {
+        errores.push({
+            campo: "mensaje",
+            mensaje: "El mensaje debe contener al menos 10 caracteres."
+        });
+    }
+
+    return errores;
+}
+
+function mostrarMensajeExito() {
+    const nombre = document.getElementById("nombre").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const telefono = document.getElementById("telefono").value.trim();
+    const mensaje = document.getElementById("mensaje").value.trim();
+
+    const overlay = document.createElement("div");
+    overlay.className = "resumen-overlay";
 
     const resumen = document.createElement("div");
     resumen.className = "resumen-formulario";
@@ -207,16 +228,16 @@ function validarFormularioContacto(evento) {
     titulo.textContent = "¡Gracias por contactarte con HAUSBIER!";
 
     const parrafoNombre = document.createElement("p");
-    parrafoNombre.textContent = "Nombre y apellido: " + nombre.value.trim();
+    parrafoNombre.textContent = "Nombre y apellido: " + nombre;
 
-    const parrafoEmail = document.createElement("p"); 
-    parrafoEmail.textContent = "Correo electrónico: " + email.value.trim();
+    const parrafoEmail = document.createElement("p");
+    parrafoEmail.textContent = "Correo electrónico: " + email;
 
-    const parrafoTelefono = document.createElement("p"); 
-    parrafoTelefono.textContent = "Teléfono: " + telefono.value.trim();
+    const parrafoTelefono = document.createElement("p");
+    parrafoTelefono.textContent = "Teléfono: " + telefono;
 
-    const parrafoMensaje = document.createElement("p"); 
-    parrafoMensaje.textContent = "Mensaje: " + mensaje.value.trim();
+    const parrafoMensaje = document.createElement("p");
+    parrafoMensaje.textContent = "Mensaje: " + mensaje;
 
     resumen.appendChild(titulo);
     resumen.appendChild(parrafoNombre);
@@ -224,11 +245,11 @@ function validarFormularioContacto(evento) {
     resumen.appendChild(parrafoTelefono);
     resumen.appendChild(parrafoMensaje);
 
-    contenedorResumen.appendChild(resumen);
-    formulario.reset();
-
-    return true;
-
+    overlay.appendChild(resumen);
+    overlay.addEventListener("click", function () {
+        overlay.remove();
+    });
+    document.body.appendChild(overlay);
 }
 
 function mostrarMensajeError(campo, texto) {

@@ -197,10 +197,38 @@ function validarFormularioContacto(evento) {
         return false;
     }
 
-    alert(`¡Gracias por contactarte, ${nombre.value.trim()}! Tu consulta sobre nuestras cervezas artesanales fue enviada con exito. Nos comunicaremos a la brevedad.`);
+    const contenedorResumen = document.getElementById("contenedor-resumenFormulario");
+    contenedorResumen.innerHTML = "";
 
+    const resumen = document.createElement("div");
+    resumen.className = "resumen-formulario";
+
+    const titulo = document.createElement("h3");
+    titulo.textContent = "¡Gracias por contactarte con HAUSBIER!";
+
+    const parrafoNombre = document.createElement("p");
+    parrafoNombre.textContent = "Nombre y apellido: " + nombre.value.trim();
+
+    const parrafoEmail = document.createElement("p"); 
+    parrafoEmail.textContent = "Correo electrónico: " + email.value.trim();
+
+    const parrafoTelefono = document.createElement("p"); 
+    parrafoTelefono.textContent = "Teléfono: " + telefono.value.trim();
+
+    const parrafoMensaje = document.createElement("p"); 
+    parrafoMensaje.textContent = "Mensaje: " + mensaje.value.trim();
+
+    resumen.appendChild(titulo);
+    resumen.appendChild(parrafoNombre);
+    resumen.appendChild(parrafoEmail);
+    resumen.appendChild(parrafoTelefono);
+    resumen.appendChild(parrafoMensaje);
+
+    contenedorResumen.appendChild(resumen);
     formulario.reset();
+
     return true;
+
 }
 
 function mostrarMensajeError(campo, texto) {

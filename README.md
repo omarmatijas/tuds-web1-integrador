@@ -26,4 +26,5 @@ https://omarmatijas.github.io/tuds-web1-integrador/
 - 🏷️ Logo propio de la marca
 - 📍 Ícono de ubicación: [Font Awesome](https://fontawesome.com/license/free)
 - 📱 Íconos de Instagram y WhatsApp: [Simple Icons](https://simpleicons.org/)
-- 📷 Imágenes obtenidas de Internet
+- 📷 Imágenes del proceso, obtenidas de Internet
+- 📷 Imágenes de producto, generadas con IA
